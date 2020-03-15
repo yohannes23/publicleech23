@@ -68,7 +68,7 @@ async def status_message_f(client, message):
             msg += "\n\n"
         LOGGER.info(msg)
         if msg == "":
-            msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
+            msg = "አክቲቭ አይደለም ማስቆም ይችላሉ ከፈለጉ 🙏"
         await message.reply_text(msg, quote=True)
 
 
@@ -88,7 +88,7 @@ async def cancel_message_f(client, message):
             )
         except Exception as e:
             await i_m_s_e_g.edit_text(
-                "<i>FAILED</i>\n\n" + str(e) + "\n#error"
+                "<i>አልተሳካም 😅</i>\n\n" + str(e) + "\nየምር ኢረር ነው"
             )
     else:
         await message.delete()
@@ -113,10 +113,10 @@ async def exec_message_f(client, message):
         stdout, stderr = await process.communicate()
         e = stderr.decode()
         if not e:
-            e = "No Error"
+            e = "ኢረር የለውም"
         o = stdout.decode()
         if not o:
-            o = "No Output"
+            o = "ምንም የሚወጣ አልተገኘለትም"
         else:
             _o = o.split("\n")
             o = "`\n".join(_o)
@@ -140,7 +140,7 @@ async def exec_message_f(client, message):
 
 async def upload_document_f(client, message):
     imsegd = await message.reply_text(
-        "processing ..."
+        "ፕሮሰሲንግ ላይ ነኝ..."
     )
     if await AdminCheck(client, message.chat.id, message.from_user.id):
         if " " in message.text:
