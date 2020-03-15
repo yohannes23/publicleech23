@@ -66,7 +66,7 @@ async def incoming_message_f(client, message):
             # if FAILED, display the error message
             await i_m_sefg.edit_text(err_message)
     else:
-        await i_m_sefg.edit_text("**FCUK**! wat have you entered. Please read /help")
+        await i_m_sefg.edit_text("**ሰላም** ያልሆነ መልእክት ነው የላኩት ")
 
 
 async def incoming_youtube_dl_f(client, message):
