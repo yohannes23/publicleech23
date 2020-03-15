@@ -33,12 +33,12 @@ async def new_join_f(client, message):
 
 
 async def help_message_f(client, message):
-    # await message.reply_text("no one gonna help you 🤣🤣🤣🤣", quote=True)
+    # await message.reply_text("በግል መተው ያወሩኝ, quote=True)
     channel_id = str(AUTH_CHANNEL)[4:]
     message_id = 99
     # display the /help message
     await message.reply_text(
-        f"please read the <a href='https://t.me/c/{channel_id}/{message_id}'>Pinned Message</a>",
+        f"please read the <a href='https://t.me/c/{channel_id}/{message_id}'>Pinned የሆነውን መልእክት ያንብቡ 🙏</a>",
         quote=True
     )
 
@@ -53,7 +53,7 @@ async def rename_message_f(client, message):
     ])
     reply_markup = pyrogram.InlineKeyboardMarkup(inline_keyboard)
     await message.reply_text(
-        "please use @renamebot",
+        "ወደቻናሌ ይግቡ @teach_app",
         quote=True,
         reply_markup=reply_markup
     )
